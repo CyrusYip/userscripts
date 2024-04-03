@@ -4,7 +4,7 @@
 // @match       *://*/*
 // @grant       GM.setClipboard
 // @grant       GM.registerMenuCommand
-// @version     4.0
+// @version     4.1
 // @author      Cyrus Yip
 // @description Get the link and title of current page, convert them to Markdown link, and write to the clipboard. Shortcut: Shift + Alt + L . There is a button in the userscript manager's menu.
 // @description:zh-CN 获取当前页面的链接与标题，将其转换为 Markdown 链接，并写入剪贴板。快捷键：Shift + Alt + L，脚本管理器菜单也有按钮。
@@ -22,9 +22,9 @@
   const showResult = () => {
     const messageDiv = document.createElement('div')
     messageDiv.innerHTML = markdownLink
-      ? `<h2>✅ Link was copied.</h2>
-        <p>${markdownLink}</p>`
-      : `<h2>❎ Failed to get link.</h2>`
+      ? `<h2 style="color: inherit">✅ Link was copied.</h2>
+        <p style="color: inherit">${markdownLink}</p>`
+      : `<h2 style="color: inherit">❎ Failed to get link.</h2>`
     messageDiv.style.cssText = `
       position: fixed;
       top: 50%;
