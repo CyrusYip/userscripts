@@ -1,5 +1,11 @@
-## link-to-markdown.js
+[中文文档](README.zh-CN.md)
 
-Get the link and title of current page, convert them to Markdown link, and write to the clipboard. Shortcut: Shift + Alt + L . There is a button in userscript manager's menu.
+# CyrusYip/userscripts
 
-获取当前页面的链接与标题，将其转换为 Markdown 链接，并写入剪贴板。快捷键：Shift + Alt + L，脚本管理器菜单也有按钮。
+Userscripts are used to enhance browsers. To use these userscripts, you need to install a userscript manager, such as Violentmonkey, Greasemonkey and Tampermonkey.
+
+## link-to-markdown
+
+[install](https://github.com/CyrusYip/userscripts/raw/main/scripts/link-to-markdown.user.js) | [alternative link](https://cdn.jsdelivr.net/gh/CyrusYip/userscripts@main/scripts/link-to-markdown.user.js)
+
+Get the link and title of current page, convert them to Markdown link, and write to the clipboard. Shortcut: Shift + Alt + L . There is a button in the userscript manager's menu.
