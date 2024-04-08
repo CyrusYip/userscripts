@@ -16,10 +16,9 @@ Get the link and title of current page, convert them to Markdown link, and write
 
 ## remove-localstorage
 
-[install][install] ([alternative][alternative]) | [source code][source code]
-
-[install]: https://github.com/CyrusYip/userscripts/raw/main/scripts/remove-localstorage.user.js
-[alternative]: https://cdn.jsdelivr.net/gh/CyrusYip/userscripts@main/scripts/remove-localstorage.user.js
-[source code]: scripts/remove-localstorage.user.js
+[install](https://github.com/CyrusYip/userscripts/raw/main/scripts/remove-localstorage.user.js)
+([alternative]( https://cdn.jsdelivr.net/gh/CyrusYip/userscripts@main/scripts/remove-localstorage.user.js))
+|
+[source code](scripts/remove-localstorage.user.js)
 
 Remove localStorage of the current page. It's used for testing websites.
