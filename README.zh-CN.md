@@ -2,6 +2,8 @@
 
 [English docs](README.md)
 
+本文档不再更新：请看[英文文档](README.md)。
+
 用户脚本（userscript）可以增加浏览器功能。使用用户脚本前，请安装用户脚本管理器（例如：Violentmonkey、Greasemonkey、Tampermonkey）。如果有 bug，[请报告](https://github.com/CyrusYip/userscripts/issues)。
 
 ## link-to-markdown
