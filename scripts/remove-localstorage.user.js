@@ -7,6 +7,7 @@
 // @author      Cyrus Yip
 // @description Remove localStorage of the current page. It's used for testing websites.
 // ==/UserScript==
+'use strict';
 (() => {
   const main = () => {
     // Check emptiness
