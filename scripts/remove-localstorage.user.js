@@ -3,7 +3,7 @@
 // @namespace   https://github.com/CyrusYip/userscripts
 // @match       *://*/*
 // @grant       GM.registerMenuCommand
-// @version     1.1
+// @version     1.2
 // @author      Cyrus Yip
 // @description Remove localStorage of the current page. It's used for testing websites.
 // ==/UserScript==
