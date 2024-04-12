@@ -22,3 +22,12 @@ Get the link and title of current page, convert them to Markdown link, and write
 [source code](scripts/remove-localstorage.user.js)
 
 Remove localStorage of the current page. It's used for testing websites.
+
+## show-keydown
+
+[install](https://github.com/CyrusYip/userscripts/raw/main/scripts/show-keydown.user.js)
+([alternative]( https://cdn.jsdelivr.net/gh/CyrusYip/userscripts@main/scripts/show-keydown.user.js))
+|
+[source code](scripts/show-keydown.user.js)
+
+Show keydown event in Console of DevTools
