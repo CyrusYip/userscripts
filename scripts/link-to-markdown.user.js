@@ -4,7 +4,7 @@
 // @match       *://*/*
 // @grant       GM.setClipboard
 // @grant       GM.registerMenuCommand
-// @version     5.4
+// @version     5.5
 // @author      Cyrus Yip
 // @description Get the link and title of current page, convert them to Markdown link, and write to the clipboard. Shortcut: Shift + Alt + L . There is a button in the userscript manager's menu.
 // @description:zh-CN 获取当前页面的链接与标题，将其转换为 Markdown 链接，并写入剪贴板。快捷键：Shift + Alt + L，脚本管理器菜单也有按钮。
@@ -27,8 +27,8 @@ const showResult = () => {
 }
 
 // keyboard shortcut: Shift + Alt + L
-document.addEventListener("keydown", ({ altKey, shiftKey, key }) => {
-  if (altKey && shiftKey && key === 'L') {
+document.addEventListener("keydown", ({ altKey, shiftKey, ctrlKey, key }) => {
+  if (ctrlKey === false && altKey && shiftKey && key === 'L') {
     copyLink()
     showResult()
   }
