@@ -31,3 +31,12 @@ Remove localStorage of the current page. It's used for testing websites.
 [source code](scripts/show-keydown.user.js)
 
 Show keydown event in Console of DevTools
+
+## zhihu-no-login
+
+[install](https://github.com/CyrusYip/userscripts/raw/main/scripts/zhihu-no-login.user.js)
+([alternative]( https://cdn.jsdelivr.net/gh/CyrusYip/userscripts@main/scripts/zhihu-no-login.user.js))
+|
+[source code](scripts/zhihu-no-login.user.js)
+
+Redirect login page of zhihu.com to explore page so that you can browse Zhihu without logging in.
