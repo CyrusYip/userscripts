@@ -3,15 +3,15 @@
 // @namespace   https://github.com/CyrusYip/userscripts
 // @match       *://*/*
 // @grant       GM.registerMenuCommand
-// @version     1.4
+// @version     2.0
 // @author      Cyrus Yip
 // @description Remove localStorage of the current page. It's used for testing websites.
 // ==/UserScript==
 'use strict';
+const isEmpty = () => { return localStorage.length === 0 ? true : false }
 const removeLocalStorage = () => {
-  // Check emptiness
-  if (localStorage.length === 0) {
-    alert('localStorage is empty now.')
+  if (isEmpty()) {
+    alert('localStorage is empty. No need to clear.')
     return
   }
   // Remove localStorage
@@ -19,7 +19,7 @@ const removeLocalStorage = () => {
   const message = `Would you like to remove localStorage?\n\n${items}`
   if (window.confirm(message)) {
     localStorage.clear()
-    removeLocalStorage() // Check emptiness again
+    if (isEmpty()) { alert('Cleared.') }
   }
 }
 GM.registerMenuCommand('Remove localStorage', removeLocalStorage)
