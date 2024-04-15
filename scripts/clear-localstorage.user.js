@@ -3,9 +3,9 @@
 // @namespace   https://github.com/CyrusYip/userscripts
 // @match       *://*/*
 // @grant       GM.registerMenuCommand
-// @version     3.1
+// @version     3.1.1
 // @author      Cyrus Yip
-// @description Clear localStorage of the current page. It's used for testing websites.
+// @description Show localStorage of the current page and ask user whether to clear it. It's used for testing websites.
 // ==/UserScript==
 'use strict';
 const isEmpty = () => { return localStorage.length === 0 ? true : false }

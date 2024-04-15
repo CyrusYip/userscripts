@@ -11,7 +11,7 @@ Userscripts are used to enhance browsers. To use these userscripts, you need to 
 |
 [source code](scripts/clear-localstorage.user.js)
 
-Clear localStorage of the current page. It's used for testing websites.
+Show localStorage of the current page and ask user whether to clear it. It's used for testing websites.
 
 ## link-to-markdown
 
