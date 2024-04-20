@@ -21,7 +21,7 @@ Show localStorage of the current page and ask user whether to clear it. It's use
 [alternative]: https://cdn.jsdelivr.net/gh/CyrusYip/userscripts@main/scripts/link-to-markdown.user.js
 [source code]: scripts/link-to-markdown.user.js
 
-Get the link and title of current page, convert them to Markdown link, and write it to the clipboard. To use this script, click the button in the userscript manager's menu or press Shift + Alt + L . In Violentmonkey, you can disable the shortcut by setting 'disable-shortcut' as true.
+Get the link and title of current page, convert them to Markdown link, and write it to the clipboard. To use this script, click the button in the userscript manager's menu or press Shift + Alt + L . This script can be customized in Violentmonkey (Dashboard -> Edit -> Values). To disable the shortcut, set 'disable-shortcut' as true. To change shortcut, set 'shortcut' (Key Definition: https://github.com/violentmonkey/vm-shortcut#key-definition). To reset, remove all values.
 
 ## show-keydown
 
