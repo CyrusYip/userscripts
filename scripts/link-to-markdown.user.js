@@ -6,7 +6,8 @@
 // @grant       GM.setClipboard
 // @grant       GM_getValue
 // @grant       GM_setValue
-// @version     7.0.1
+// @require     https://cdn.jsdelivr.net/npm/@violentmonkey/shortcut@1
+// @version     8.0.0
 // @author      Cyrus Yip
 // @description Get the link and title of current page, convert them to Markdown link, and write it to the clipboard. To use this script, click the button in the userscript manager's menu or press Shift + Alt + L . In Violentmonkey, you can disable the shortcut by setting 'disable-shortcut' as true.
 // ==/UserScript==
@@ -31,14 +32,15 @@ const showResult = () => {
 if (GM_getValue('disable-shortcut') === undefined) {
   GM_setValue('disable-shortcut', false)
 }
+if (GM_getValue('shortcut') === undefined) {
+  GM_setValue('shortcut', 'shift-alt-l')
+}
 // keyboard shortcut: Shift + Alt + L
 // to disable shortcut, set 'disable-shortcut' as true
 if (GM_getValue('disable-shortcut') !== true) {
-  document.addEventListener("keydown", ({ altKey, shiftKey, ctrlKey, key }) => {
-    if (ctrlKey === false && altKey && shiftKey && key === 'L') {
-      copyLink()
-      showResult()
-    }
+  VM.shortcut.register(GM_getValue('shortcut'), () => {
+    copyLink()
+    showResult()
   })
 }
 
