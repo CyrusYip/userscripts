@@ -6,8 +6,9 @@
 // @grant       GM.setClipboard
 // @grant       GM.getValue
 // @grant       GM.setValue
+// @grant       GM.notification
 // @require     https://cdn.jsdelivr.net/npm/@violentmonkey/shortcut@1
-// @version     8.2.1
+// @version     9.0.0
 // @author      Cyrus Yip
 // @description Get the link and title of current page, convert them to Markdown link, and write it to the clipboard. To use this script, click the button in the userscript manager's menu or press Shift + Alt + L . This script can be customized in Violentmonkey (Dashboard -> Edit -> Values). To disable the shortcut, set 'disable-shortcut' as true. To change shortcut, set 'shortcut' (Key Definition: https://github.com/violentmonkey/vm-shortcut#key-definition). To reset, remove all values.
 // ==/UserScript==
@@ -21,11 +22,9 @@ const copyLink = () => {
 }
 
 const showResult = () => {
-  if (markdownLink) {
-    window.alert(`✅ Link was copied.\n\n${markdownLink}`)
-  } else {
-    window.alert(`❎ Failed to get link.`)
-  }
+  markdownLink
+    ? GM.notification(`✔ Link was copied.\n${markdownLink}`)
+    : GM.notification(`✘ Failed to get link.`)
 }
 
 // set default value of 'disable-shortcut' as false, 'shortcut' as 'shift-alt-l'
