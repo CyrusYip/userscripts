@@ -8,7 +8,7 @@
 // @grant       GM.setValue
 // @grant       GM.notification
 // @require     https://cdn.jsdelivr.net/npm/@violentmonkey/shortcut@1
-// @version     9.2.0
+// @version     9.2.1
 // @author      Cyrus Yip
 // @description Get the link and title of current page, convert them to Markdown link, and write it to the clipboard. To use this script, click the button in the userscript manager's menu or press Shift + Alt + L . This script can be customized in Violentmonkey (Dashboard -> Edit -> Values). To disable the shortcut, set 'disable-shortcut' as true. To disable notification, set 'disable-notification' as true. To change shortcut, set 'shortcut' (Key Definition: https://github.com/violentmonkey/vm-shortcut#key-definition). To reset, remove all values.
 // ==/UserScript==
@@ -37,7 +37,7 @@ const showResult = async () => {
 
 const setShortcut = async () => {
   if (await GM.getValue('disable-shortcut') === true) { return }
-  VM.shortcut.register(await GM.getValue('shortcut'), () => {
+  VM.shortcut.register(await GM.getValue('shortcut', 'shift-alt-l'), () => {
     copyLink()
     showResult()
   })
