@@ -13,6 +13,15 @@ Userscripts are used to enhance browsers. To use these userscripts, you need to 
 
 Show localStorage of the current page and ask user whether to clear it. It's used for testing websites.
 
+## copy-selected-text
+
+[install](https://github.com/CyrusYip/userscripts/raw/main/scripts/copy-selected-text.user.js)
+([alternative]( https://cdn.jsdelivr.net/gh/CyrusYip/userscripts@main/scripts/copy-selected-text.user.js))
+|
+[source code](scripts/copy-selected-text.user.js)
+
+Some websites forbid copying or append additional copyright info. This script copies selected text as long as you can select text.
+
 ## link-to-markdown
 
 [install][install] ([alternative][alternative]) | [source code][source code]
