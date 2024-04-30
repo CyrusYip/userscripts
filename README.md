@@ -2,7 +2,11 @@
 
 [![](https://data.jsdelivr.com/v1/package/gh/CyrusYip/userscripts/badge?style=rounded)](https://www.jsdelivr.com/package/gh/CyrusYip/userscripts)
 
-Userscripts are used to enhance browsers. To use these userscripts, you need to install a userscript manager, such as Violentmonkey, Greasemonkey and Tampermonkey. Please [summit an issue](https://github.com/CyrusYip/userscripts/issues) if there are bugs. Note that there may be update delay if you use alternative install link.
+Userscripts are used to enhance browsers. To use these userscripts, install a userscript manager, such as [Violentmonkey](https://violentmonkey.github.io/), and click the install links below. Note that there may be update delay if you use alternative install link.
+
+[Summit an issue](https://github.com/CyrusYip/userscripts/issues) if there are bugs.
+
+Featured script: [link-to-markdown](#link-to-markdown) .
 
 ## clear-localstorage
 
