@@ -43,7 +43,16 @@ Get the link and title of current page, convert them to Markdown link, and write
 |
 [source code](scripts/show-keydown.user.js)
 
-Show keydown event in Console of DevTools
+Show keydown event in Console of DevTools.
+
+## userscript-manager-api
+
+[install](https://github.com/CyrusYip/userscripts/raw/main/scripts/userscript-manager-api.user.js)
+([alternative]( https://cdn.jsdelivr.net/gh/CyrusYip/userscripts@main/scripts/userscript-manager-api.user.js))
+|
+[source code](scripts/userscript-manager-api.user.js)
+
+Open API documentation of common userscript managers (Greasemonkey, Tampermonkey and Violentmonkey).
 
 ## zhihu-no-login
 
