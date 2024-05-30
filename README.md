@@ -54,6 +54,15 @@ Show keydown event in Console of DevTools.
 
 Open API documentation of common userscript managers (Greasemonkey, Tampermonkey and Violentmonkey).
 
+## viewport-info
+
+[install](https://github.com/CyrusYip/userscripts/raw/main/scripts/viewport-info.user.js)
+([alternative]( https://cdn.jsdelivr.net/gh/CyrusYip/userscripts@main/scripts/viewport-info.user.js))
+|
+[source code](scripts/viewport-info.user.js)
+
+Show [innerWidth](https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth) and [innerHeight](https://developer.mozilla.org/en-US/docs/Web/API/Window/innerHeight), and update them on resize event.
+
 ## zhihu-no-login
 
 [install](https://github.com/CyrusYip/userscripts/raw/main/scripts/zhihu-no-login.user.js)
