@@ -3,9 +3,9 @@
 // @namespace   https://github.com/CyrusYip/userscripts
 // @match       *://*/*
 // @grant       GM.registerMenuCommand
-// @version     1.0.0
+// @version     1.1.0
 // @author      Cyrus Yip
-// @description Show innerWidth and innerHeight, and update them on resize event.
+// @description Show innerWidth, innerHeight, and devicePixelRatio. Update them on resize event.
 // ==/UserScript==
 'use strict';
 
@@ -15,10 +15,11 @@ const showInfo = () => {
   oldInfoDiv?.remove()
 
   // get info
-  const { innerWidth } = window
-  const { innerHeight } = window
-  console.log(`innerWidth: ${innerWidth}
-  innerHeight: ${innerHeight}`)
+  const { innerWidth, innerHeight, devicePixelRatio } = window
+  const info = `innerWidth: ${innerWidth}
+innerHeight: ${innerHeight}
+devicePixelRatio: ${devicePixelRatio}`
+  console.log(info)
 
   // show info
   const infoDiv = document.createElement('div')
@@ -27,6 +28,8 @@ const showInfo = () => {
     innerWidth: ${innerWidth}
     <br />
     innerHeight: ${innerHeight}
+    <br />
+    devicePixelRatio: ${devicePixelRatio}
   `
   infoDiv.style.cssText = `
     position: fixed;
@@ -50,7 +53,7 @@ const detectResize = () => {
   })
 }
 
-GM.registerMenuCommand('Show innerWidth and innerHeight', () => {
+GM.registerMenuCommand('Show viewport info', () => {
   showInfo()
   detectResize()
 })

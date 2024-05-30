@@ -61,7 +61,7 @@ Open API documentation of common userscript managers (Greasemonkey, Tampermonkey
 |
 [source code](scripts/viewport-info.user.js)
 
-Show [innerWidth](https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth) and [innerHeight](https://developer.mozilla.org/en-US/docs/Web/API/Window/innerHeight), and update them on resize event.
+Show [innerWidth](https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth), [innerHeight](https://developer.mozilla.org/en-US/docs/Web/API/Window/innerHeight), and [devicePixelRatio](https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio). Update them on resize event.
 
 ## zhihu-no-login
 
