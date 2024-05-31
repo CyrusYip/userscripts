@@ -2,11 +2,14 @@
 // @name        Viewport info
 // @namespace   https://github.com/CyrusYip/userscripts
 // @match       *://*/*
+// @grant       GM.setValue
+// @grant       GM.getValue
 // @grant       GM.registerMenuCommand
-// @version     1.1.0
+// @version     1.2.0
 // @author      Cyrus Yip
 // @description Show innerWidth, innerHeight, and devicePixelRatio. Update them on resize event.
 // ==/UserScript==
+
 'use strict';
 
 const showInfo = () => {
@@ -53,7 +56,25 @@ const detectResize = () => {
   })
 }
 
-GM.registerMenuCommand('Show viewport info', () => {
-  showInfo()
-  detectResize()
-})
+const loadConfig = async () => {
+  const autoShow = await GM.getValue('autoShow', false)
+  if (autoShow) {
+    showInfo()
+    detectResize()
+    GM.registerMenuCommand('Disable autoShow', () => {
+      GM.setValue('autoShow', false)
+      window.location.reload()
+    }, { title: "Don't show viewport info after page is loaded" })
+  } else {
+    GM.registerMenuCommand('Show viewport info', () => {
+      showInfo()
+      detectResize()
+    })
+    GM.registerMenuCommand('Enable autoShow', () => {
+      GM.setValue('autoShow', true)
+      window.location.reload()
+    }, { title: 'Show viewport info after page is loaded' })
+  }
+}
+
+loadConfig()
