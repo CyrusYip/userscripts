@@ -5,7 +5,7 @@
 // @grant       GM.setValue
 // @grant       GM.getValue
 // @grant       GM.registerMenuCommand
-// @version     1.4.0
+// @version     1.4.1
 // @author      Cyrus Yip
 // @description Show innerWidth, innerHeight, and devicePixelRatio. Update them on resize event.
 // ==/UserScript==
@@ -76,7 +76,7 @@ const loadConfig = async () => {
   }
 
   GM.registerMenuCommand('Show viewport info', () => {
-    showInfo()
+    refreshInfo()
     detectResize()
   })
 
