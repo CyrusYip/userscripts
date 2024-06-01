@@ -5,18 +5,12 @@
 // @grant       GM.setValue
 // @grant       GM.getValue
 // @grant       GM.registerMenuCommand
-// @version     2.0.0
+// @version     2.1.0
 // @author      Cyrus Yip
 // @description Show innerWidth, innerHeight, and devicePixelRatio. Update them on resize event.
 // ==/UserScript==
 
 'use strict';
-
-const removeInfo = () => {
-  // remove old InfoDiv
-  const oldInfoDiv = document.querySelector('div.viewport-screen-info')
-  oldInfoDiv?.remove()
-}
 
 const showInfo = () => {
   // get info
@@ -46,6 +40,11 @@ devicePixelRatio: ${devicePixelRatio}`
   document.body.appendChild(infoDiv)
 }
 
+const removeInfo = () => {
+  const infoDiv = document.querySelector('div.viewport-screen-info')
+  infoDiv?.remove()
+}
+
 const refreshInfo = () => {
   removeInfo()
   showInfo()
@@ -59,35 +58,29 @@ const removeDetectResize = () => {
   window.removeEventListener('resize', refreshInfo)
 }
 
+const activate = () => {
+  refreshInfo()
+  detectResize()
+}
+
+const deactivate = () => {
+  removeInfo()
+  removeDetectResize()
+}
+
 const loadConfig = async () => {
   const autoShow = await GM.getValue('autoShow', false)
-  if (autoShow) {
-    showInfo()
-    detectResize()
-  }
+  if (autoShow) { activate() }
 }
 
 const registerCommands = () => {
-  GM.registerMenuCommand('Show viewport info', () => {
-    refreshInfo()
-    detectResize()
-  })
-
-  GM.registerMenuCommand('Remove viewport info', () => {
-    removeInfo()
-    removeDetectResize()
-  })
-
+  GM.registerMenuCommand('Show viewport info', activate)
+  GM.registerMenuCommand('Remove viewport info', deactivate)
   GM.registerMenuCommand('Enable autoShow', () => {
-    GM.setValue('autoShow', true)
-    refreshInfo()
-    detectResize()
+    GM.setValue('autoShow', true); activate()
   })
-
   GM.registerMenuCommand('Disable autoShow', () => {
-    GM.setValue('autoShow', false)
-    removeInfo()
-    removeDetectResize()
+    GM.setValue('autoShow', false); deactivate()
   })
 }
 
