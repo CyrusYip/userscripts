@@ -5,7 +5,7 @@
 // @grant       GM.setValue
 // @grant       GM.getValue
 // @grant       GM.registerMenuCommand
-// @version     1.4.1
+// @version     2.0.0
 // @author      Cyrus Yip
 // @description Show innerWidth, innerHeight, and devicePixelRatio. Update them on resize event.
 // ==/UserScript==
@@ -64,17 +64,10 @@ const loadConfig = async () => {
   if (autoShow) {
     showInfo()
     detectResize()
-    GM.registerMenuCommand('Disable autoShow', () => {
-      GM.setValue('autoShow', false)
-      window.location.reload()
-    })
-  } else {
-    GM.registerMenuCommand('Enable autoShow', () => {
-      GM.setValue('autoShow', true)
-      window.location.reload()
-    })
   }
+}
 
+const registerCommands = () => {
   GM.registerMenuCommand('Show viewport info', () => {
     refreshInfo()
     detectResize()
@@ -84,6 +77,19 @@ const loadConfig = async () => {
     removeInfo()
     removeDetectResize()
   })
+
+  GM.registerMenuCommand('Enable autoShow', () => {
+    GM.setValue('autoShow', true)
+    refreshInfo()
+    detectResize()
+  })
+
+  GM.registerMenuCommand('Disable autoShow', () => {
+    GM.setValue('autoShow', false)
+    removeInfo()
+    removeDetectResize()
+  })
 }
 
 loadConfig()
+registerCommands()
