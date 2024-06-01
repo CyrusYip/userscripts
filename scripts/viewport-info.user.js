@@ -5,18 +5,20 @@
 // @grant       GM.setValue
 // @grant       GM.getValue
 // @grant       GM.registerMenuCommand
-// @version     1.3.0
+// @version     1.4.0
 // @author      Cyrus Yip
 // @description Show innerWidth, innerHeight, and devicePixelRatio. Update them on resize event.
 // ==/UserScript==
 
 'use strict';
 
-const showInfo = () => {
+const removeInfo = () => {
   // remove old InfoDiv
   const oldInfoDiv = document.querySelector('div.viewport-screen-info')
   oldInfoDiv?.remove()
+}
 
+const showInfo = () => {
   // get info
   const { innerWidth, innerHeight, devicePixelRatio } = window
   const info = `innerWidth: ${innerWidth}
@@ -44,10 +46,17 @@ devicePixelRatio: ${devicePixelRatio}`
   document.body.appendChild(infoDiv)
 }
 
+const refreshInfo = () => {
+  removeInfo()
+  showInfo()
+}
+
 const detectResize = () => {
-  window.addEventListener('resize', () => {
-    showInfo()
-  })
+  window.addEventListener('resize', refreshInfo)
+}
+
+const removeDetectResize = () => {
+  window.removeEventListener('resize', refreshInfo)
 }
 
 const loadConfig = async () => {
@@ -60,15 +69,21 @@ const loadConfig = async () => {
       window.location.reload()
     })
   } else {
-    GM.registerMenuCommand('Show viewport info', () => {
-      showInfo()
-      detectResize()
-    })
     GM.registerMenuCommand('Enable autoShow', () => {
       GM.setValue('autoShow', true)
       window.location.reload()
     })
   }
+
+  GM.registerMenuCommand('Show viewport info', () => {
+    showInfo()
+    detectResize()
+  })
+
+  GM.registerMenuCommand('Remove viewport info', () => {
+    removeInfo()
+    removeDetectResize()
+  })
 }
 
 loadConfig()
