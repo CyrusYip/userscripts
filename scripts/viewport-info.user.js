@@ -5,7 +5,7 @@
 // @grant       GM.setValue
 // @grant       GM.getValue
 // @grant       GM.registerMenuCommand
-// @version     1.2.1
+// @version     1.3.0
 // @author      Cyrus Yip
 // @description Show innerWidth, innerHeight, and devicePixelRatio. Update them on resize event.
 // ==/UserScript==
@@ -27,13 +27,7 @@ devicePixelRatio: ${devicePixelRatio}`
   // show info
   const infoDiv = document.createElement('div')
   infoDiv.classList.add('viewport-screen-info')
-  infoDiv.innerHTML = `
-    innerWidth: ${innerWidth}
-    <br />
-    innerHeight: ${innerHeight}
-    <br />
-    devicePixelRatio: ${devicePixelRatio}
-  `
+  infoDiv.innerHTML = `${innerWidth} × ${innerHeight} (${devicePixelRatio})`
   infoDiv.style.cssText = `
     position: fixed;
     bottom: 16px;
