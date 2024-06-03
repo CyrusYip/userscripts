@@ -5,7 +5,7 @@
 // @grant       GM.setValue
 // @grant       GM.getValue
 // @grant       GM.registerMenuCommand
-// @version     2.1.0
+// @version     2.2.0
 // @author      Cyrus Yip
 // @description Show innerWidth, innerHeight, and devicePixelRatio. Update them on resize event.
 // ==/UserScript==
@@ -15,10 +15,10 @@
 const showInfo = () => {
   // get info
   const { innerWidth, innerHeight, devicePixelRatio } = window
-  const info = `innerWidth: ${innerWidth}
-innerHeight: ${innerHeight}
-devicePixelRatio: ${devicePixelRatio}`
-  console.log(info)
+  //   const info = `innerWidth: ${innerWidth}
+  // innerHeight: ${innerHeight}
+  // devicePixelRatio: ${devicePixelRatio}`
+  //   console.log(info)
 
   // show info
   const infoDiv = document.createElement('div')
