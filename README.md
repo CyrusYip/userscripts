@@ -36,6 +36,15 @@ Some websites forbid copying or append additional copyright info. This script co
 
 Get the link and title of current page, convert them to Markdown link, and write it to the clipboard. To use this script, click "Copy Markdown link" in the userscript manager's menu or press Shift + Alt + L . To change settings, click "Link to Markdown Settings" in the menu. Key Definition: https://github.com/violentmonkey/vm-shortcut#key-definition .
 
+## open-iframe
+
+[install](https://github.com/CyrusYip/userscripts/raw/main/scripts/open-iframe.user.js)
+([alternative]( https://cdn.jsdelivr.net/gh/CyrusYip/userscripts@main/scripts/open-iframe.user.js))
+|
+[source code](scripts/open-iframe.user.js)
+
+Open the iframe element in a new tab.
+
 ## show-keydown
 
 [install](https://github.com/CyrusYip/userscripts/raw/main/scripts/show-keydown.user.js)
