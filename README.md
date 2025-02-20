@@ -45,6 +45,15 @@ Get the link and title of current page, convert them to Markdown link, and write
 
 Open the iframe element in a new tab.
 
+## pdfjs-downloader
+
+[install](https://github.com/CyrusYip/userscripts/raw/main/scripts/pdfjs-downloader.user.js)
+([alternative]( https://cdn.jsdelivr.net/gh/CyrusYip/userscripts@main/scripts/pdfjs-downloader.user.js))
+|
+[source code](scripts/pdfjs-downloader.user.js)
+
+Download the PDF file from the pdf.js viewer.
+
 ## show-keydown
 
 [install](https://github.com/CyrusYip/userscripts/raw/main/scripts/show-keydown.user.js)
